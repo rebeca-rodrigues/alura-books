@@ -40,7 +40,7 @@
 .card__descricao {
     display: flex;
     justify-content: space-between;
-    gap: 0.5em;
+    gap: .5em;
     align-items: flex-start;
 }
 
@@ -57,32 +57,26 @@
     color: var(--azul-escuro);
     font-size: 18px;
     font-weight: 700;
-    padding: 1em 0;
+    padding: .5em 0;
 }
 
-.card__imagem {
-    width: 43%;
-}
 
 .card__texto {
     color: var(--cor-preto);
     font-size: 14px;
-    padding: 0 0 1em 0;
 }
 
 .card__links {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
+    gap: .5em;
 }
 
 .card__icones {
-    padding: 0 1em;
     display: flex;
     align-items: center;
-    gap: .5em;
+    padding-left: 1em;
 }
 
 .card__icones img {
@@ -95,12 +89,17 @@
     color: var(--cor-branco);
     font-weight: 700;
     background-color: var(--cor-amarelo);
-    width: 32%;
-    padding: .8em 1em;
-    margin-top: .3em;
+    padding: 1em 2.2em;
+    margin-top: .5em;
 }
 
 @media screen and (min-width: 1024px) {
+    .carrossel__conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .carrossel__titulo {
         font-size: 26px;
         padding: 2em 0 .8em 0;
@@ -117,23 +116,69 @@
     }
     
     .swiper-pagination {
-        margin: 1em 0 3em 0;
+        margin: 2em 0 3em 0;
+        --swiper-pagination-bullet-size: 10px;
     }
 
     .card {
-        margin: 3em 13em;
+        width: 55%;
         padding: 2em;
         gap: 1em;
     }
 
     .card__texto {
         font-size: 16px;
-        width: 80%;
+        margin-right: 8em;
+    }
+
+    .card__imagem {
+        width: 30%;
     }
 
     .card__botao {
-        padding: 0.75em 2.2em;
-        width: auto;
+        padding: 1em 2.2em;
+    }
+
+}
+
+@media screen and (min-width: 1728px) {
+    .carrossel__titulo {
+        font-size: 32px;
+    }
+
+    .carrossel__conteudo {
+        flex-direction: row;
+        align-items: flex-end;
+        margin: 3em 10vw 5em 10vw;
+
+    }
+
+    .swiper {
+        width: 40%;
+    }
+
+    .swiper-pagination {
+        margin: 1em 0;
+    }
+
+    .card {
+        width: 38%;
+        padding: 1em;
+        margin: 0em;
+        margin-left: 3em;
+    }
+
+    .card__subtitulo {
+        font-size: 32px;
+        line-height: 1.5em;
+    }
+
+    .card__titulo-livro {
+        padding: 1.5em 0;
+    }
+
+    .card__texto {
+        width: 80%;
     }
 
 }

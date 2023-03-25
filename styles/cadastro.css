@@ -65,3 +65,14 @@
         height: 10%;
     }
 }
+
+@media screen and (min-width: 1728px)  {
+    .cadastro {
+        padding: 3em 25vw;
+    }
+
+    .cadastro__titulo,
+    .cadastro__texto {
+        width: 85%;
+    }
+}

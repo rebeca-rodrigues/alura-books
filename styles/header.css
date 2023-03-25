@@ -3,8 +3,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0.5em 0 1em;
+    padding: 0 0.5em 0 0em;
     position: relative;
+}
+
+.container__rotulo {
+    padding: .5em;
 }
 
 .cabecalho__menu-hamburguer {
@@ -55,6 +59,14 @@
     
 }
 
+.cabecalho__menu-checkbox:checked~.container__rotulo>.cabecalho__menu-hamburguer {
+    background-image: url("../assets/Menu\ Aberto.svg");
+}
+
+.cabecalho__menu-checkbox:checked~.container__rotulo {
+    background: var(--azul-degrade);
+}
+
 .cabecalho__menu-checkbox:checked~.lista-menu {
     display: block;
     z-index: 1;
@@ -73,6 +85,10 @@
 }
 
 .cabecalho__lista {
+    display: none;
+}
+
+.container__imagens-titulo {
     display: none;
 }
 
@@ -109,11 +125,14 @@
         color: var(--cor-preto);
     }
 
+    .cabecalho__lista-opcao {
+        padding: .5em 1em;
+    }
+
     .lista-menu {
         display: none;
         position: absolute;
-        top: 100%;
-        left: 0%;
+        top: 80%;
         width: auto;
         background-color: var(--cor-branco);
     }
@@ -124,8 +143,50 @@
 
     }
 
+    .cabecalho__categorias-checkbox:checked~.opcoes__rotulo>.cabecalho__lista-opcao {
+        background: var(--azul-degrade);
+        color: var(--cor-branco);
+    }
+
+    .lista-menu__itens:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__itens:hover>.lista-menu__links {
+        -webkit-text-fill-color:  var(--cor-branco);
+        text-decoration: none;
+    }
+
     .favoritos__transparente {
         display: none;
+    }
+
+}
+
+@media screen and (min-width: 1728px) {
+    .cabecalho__titulo {
+        padding-right: 1.5em;
+    }
+
+    .container__imagens-direita {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        text-decoration: none;
+    }
+
+    .container__imagens-titulo {
+        display: block;
+        color: var(--cor-preto);
+        font-size: 20px;
+    }
+
+    .favoritos__transparente {
+        display: none;
+    }
+
+    .cabecalho__lista {
+        margin-right: auto;
     }
 
 }
